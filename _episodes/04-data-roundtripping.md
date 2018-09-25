@@ -32,7 +32,7 @@ function change_content_by_platform(form_control){
 window.onload = set_page_view_defaults;
 </script>
 
-_Modified from origanal Data Carpentry lesson. Originals can be found by navigation using links along top of page_
+_Modified from origanal Data Carpentry lesson. Originals can be found by navigation using links along bottom of page_
 
 ## Moving data is simple
 (but not always easy!)
@@ -142,7 +142,7 @@ These directions are platform specific so please follow the instructions for you
 <div id="div_aws_win" style="display:block" markdown="1">
 
 
-### Uploading Data to your Virtual Machine
+### Uploading Data to your server
 
 If you're using a PC, we recommend you use the *PSCP* program. This program is from the same suite of
 tools as the putty program we have been using to connect.
