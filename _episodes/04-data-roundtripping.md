@@ -32,6 +32,7 @@ function change_content_by_platform(form_control){
 window.onload = set_page_view_defaults;
 </script>
 
+_Modified from origanal Data Carpentry lesson. Originals can be found by navigation using links along top of page_
 
 ## Moving data is simple
 (but not always easy!)
