@@ -3,11 +3,11 @@ title: "Data roundtripping"
 teaching: 15
 exercises: 5
 questions:
-- How do I move data into the cloud?
+- How do I move data into the server?
 - How do I get my analysis results back to my computer?
 objectives:
-- Transfer data into a cloud session
-- Transfer data out of a cloud session
+- Transfer data into a server session
+- Transfer data out of a server session
 keypoints:
 - No matter which way you want to move data, it's easier to start the transfer from your local machine
 ---
@@ -32,17 +32,17 @@ function change_content_by_platform(form_control){
 window.onload = set_page_view_defaults;
 </script>
 
-_Modified from origanal Data Carpentry lesson. Originals can be found by navigation using links at bottom of page_
+_Modified from origanal Data Carpentry lesson. Originals can be found by navigation using links along top of page_
 
 ## Moving data is simple
 (but not always easy!)
 
-Now that you're on the cloud, you'll need data. There are two main places you can get data
-from: your local machine, or other machines in the cloud, like NCBI.
+Now that you're on the server, you'll need data. There are two main places you can get data
+from: your local machine, or other machines elsewhere, like NCBI.
 
 How you get your data depends on where the data is right now.
 
-### Getting data from the cloud
+### Getting data from elsewhere
 
 There are two programs that will download data from a remote server to your local
 (or remote) machine: ``wget`` and ``curl``. They were designed to do slightly different
@@ -122,17 +122,17 @@ download the page instead of showing it to us **and** specifies that it should s
 file using the same name it had on the server: species_EnsemblBacteria.txt
 
 It's important to note that both ``curl`` and ``wget`` download to the computer that the
-command line belongs to. So, if you are logged into AWS on the command line and execute
-the ``curl`` command above in the AWS terminal, the file will be downloaded to your AWS
+command line belongs to. So, if you are logged into our server on the command line and execute
+the ``curl`` command above in the server terminal, the file will be downloaded to our server
 machine, not your local one.
 
-### Moving files between your laptop and your instance
+### Moving files between your laptop and the server
 
-What if the data you need is on your local computer, but you need to get it *into* the
-cloud? There are also several ways to do this, but it's *always* easier
+What if the data you need is on your local computer, but you need to get it *onto* the
+server? There are also several ways to do this, but it's *always* easier
 to start the transfer locally. **This means if you're using a transfer program, it needs to be
-installed on your local machine, not on your instance. If you're typing into a terminal,
-the terminal should not be logged into your instance, it should be showing your local computer.**
+installed on your local machine, not on the server. If you're typing into a terminal,
+the terminal should not be logged into our server, it should be showing your local computer.**
 
 These directions are platform specific so please follow the instructions for your system:
 
@@ -167,7 +167,7 @@ C:\User\your-pc-username\Downloads> pscp.exe local_file.txt dcuser@ip.address:/h
 ~~~
 {: .bash}
 
-### Downloading Data from your Virtual Machine
+### Downloading Data from our server
 
 1. Follow the instructions in the Upload section to download (if needed) and access the *PSCP* program (steps 1-3)
 2. Download the zipped fastqc report using the following command **(make sure you use substitute 'your-pc-username' for your actual pc username and dcuser@ ip.address with your remote login credentials)**
@@ -198,18 +198,18 @@ Note that you are always running `scp` locally, but that *doesn't* mean that
 you can only move files from your local computer. A command like:
 
 ~~~
-$ scp <local file> <AWS instance>
+$ scp <local file> <Server location>
 ~~~
 {: .bash}
 
 To move it back, you just re-order the to and from fields:
 
 ~~~
-$ scp <AWS instance> <local file>
+$ scp <Server location> <local file>
 ~~~
 {: .bash}
 
-### Uploading Data to your Virtual Machine
+### Uploading Data to your Server
 
 1. Open the terminal and use the `scp` command to upload a file (e.g. local_file.txt) to the dcuser home directory:
 
@@ -218,7 +218,7 @@ $  scp local_file.txt dcuser@ip.address:/home/dcuser/
 ~~~
 {: .bash}
 
-### Downloading Data from your Virtual Machine
+### Downloading Data from your server
 
 Let's download a zipped file from our remote machine.  You should have a fastqc report in ~/dc_workshop/results/fastqc_untrimmed_reads/SRR097977_fastqc.zip
 
